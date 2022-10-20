@@ -1,20 +1,74 @@
-<div class="example-container">
-  <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-    <mat-label>First Name</mat-label>
-    <input matInput #input placeholder="Ex. Nougat">
-  </mat-form-field>
+<mat-card>
+  
+  <form action="" [formGroup]="userForm" class="addform">
 
-  <mat-form-field hintLabel="Max 10 characters" appearance="fill">
-    <mat-label>Last Name</mat-label>
-    <input matInput #input placeholder="Ex. Nougat">
-  </mat-form-field>
+    <div class="example-container">
+      <mat-form-field hintLabel="Enter your name" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput #input placeholder="Ex. Nougat" formControlName="firstname">
+      </mat-form-field>
+  
+      <mat-form-field hintLabel="Enter lastname" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput #input placeholder="Ex. Nougat" formControlName="lastname">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Select me</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+        </mat-select>
+        <mat-hint >Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Select me</mat-label>
-    <mat-select>
-      <mat-option value="one">Male</mat-option>
-      <mat-option value="two">Female</mat-option>
-    </mat-select>
-    <mat-hint >Here's the dropdown arrow ^</mat-hint>
-  </mat-form-field>
-</div>
+    <button mat-stroked-button color="accent" (click)="addItem()">Add</button>
+    
+  </form>
+
+  <div class=".col-md-8 mt-4 mb-4">
+    <table class="table table-bordered">
+      
+      <thead>
+        <tr>
+          <th>
+            <span class="example-list-section">
+              <mat-checkbox   [(ngModel)]="IsChecked" >
+                Select All
+              </mat-checkbox>
+            </span>
+          </th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>gender</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of listData;" >
+          <td>
+            <mat-checkbox [checked]="IsChecked" class="example-margin"  (change)="changeEvent($event)">
+              <span></span>
+            </mat-checkbox>
+          </td>
+          <td>
+            <span>{{item.firstname}}</span>
+          </td>
+          <td>
+            <span>{{item.lastname}}</span>
+          </td>
+          <td>
+            <span>{{item.gender}}</span>
+          </td>
+          <td><button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon"(click)="removeItem(item)" >
+            <mat-icon>delete</mat-icon>
+              </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+</mat-card>

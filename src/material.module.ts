@@ -8,13 +8,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSelectModule } from '@angular/material/select';
+import { MatOption, MatOptionModule } from '@angular/material/core';
 
 //Navigation
 import { MatMenuModule } from '@angular/material/menu';
@@ -63,13 +63,13 @@ import { MatTableModule } from '@angular/material/table';
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
     MatSlideToggleModule,
     MatSliderModule,
     MatSelectModule,
+    MatOptionModule,
 
     //Navigation
     MatMenuModule,
@@ -116,13 +116,13 @@ import { MatTableModule } from '@angular/material/table';
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
     MatSlideToggleModule,
     MatSliderModule,
     MatSelectModule,
+    MatOptionModule,
 
     //Navigation
     MatMenuModule,
