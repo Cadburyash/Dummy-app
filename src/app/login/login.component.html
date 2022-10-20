@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <img src="" alt="">
+	<h2 class="titles"> Sign in	</h2>
+  <h3>To Continue</h3>
+
+    <form id="loginForm" class="form" [formGroup]="loginform" (ngSubmit)="onSubmit()">
+      
+      <div class="animate-label">
+        <input type="text" id="username" name="username" formControlName="username" [ngClass]="{ 'is-invalid': submitted && loginform.controls.username.errors}" />
+        <label for="username"> Email </label>
+      </div>
+        <span *ngIf="submitted && loginform.controls.username.errors" class="text-danger">Invalid Email</span>
+      
+
+      <div class="animate-label">
+        
+          <label>Password</label>
+          <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && loginform.controls.password.errors }"  />
+          
+        </div>
+        <span *ngIf="submitted && loginform.controls.password.errors" class="text-danger">password is Invalid</span>
+ 
+
+      
+      
+      <div class="flex" class="form-group">
+        <button class="btn">Login</button>
+      </div> 
+      
+      
+    </form>
+</div>
+
